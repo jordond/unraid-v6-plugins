@@ -68,7 +68,7 @@ if [ -f /etc/rc.d/rc.&name; ]; then
   rm -f /etc/rc.d/rc.&name;
 fi;
 
-/sbin/upgradepkg --install-new /boot/config/plugins/&name
+/sbin/upgradepkg --install-new /boot/config/plugins/&name;
 </INLINE>
 </FILE>
 
