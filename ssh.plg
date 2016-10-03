@@ -68,14 +68,6 @@ if [ -f /etc/rc.d/rc.&name; ]; then
   rm -f /etc/rc.d/rc.&name;
 fi;
 
-if [ ! -f /boot/config/plugins/&name ]; then
-  NETCHECK=$(timeout 5 wget --no-check-certificate -qST4 --spider &pluginURL; 2>&amp;1 | grep HTTP | tail -1 | cut -f1 | awk '{print $NF}')
-  if [ "$NETCHECK" == "OK" ]; then
-    wget --no-check-certificate -q -P /boot/config/plugins/&name &packageURL
-  else
-    exit 1
-  fi
-fi
 /sbin/upgradepkg --install-new /boot/config/plugins/&name
 </INLINE>
 </FILE>
